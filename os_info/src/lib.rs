@@ -46,6 +46,10 @@ mod imp;
 #[path = "openbsd/mod.rs"]
 mod imp;
 
+#[cfg(target_os = "cygwin")]
+#[path = "cygwin/mod.rs"]
+mod imp;
+
 #[cfg(target_os = "redox")]
 #[path = "redox/mod.rs"]
 mod imp;
@@ -64,6 +68,7 @@ mod imp;
     target_os = "macos",
     target_os = "netbsd",
     target_os = "openbsd",
+    target_os = "cygwin",
     target_os = "redox",
     target_os = "windows"
 )))]
@@ -80,7 +85,8 @@ mod os_type;
     target_os = "freebsd",
     target_os = "illumos",
     target_os = "netbsd",
-    target_os = "openbsd"
+    target_os = "openbsd",
+    target_os = "cygwin"
 ))]
 mod uname;
 mod version;
